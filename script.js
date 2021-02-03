@@ -21,7 +21,9 @@ function handleForm(event) {
             }
         }).catch((error) => {
             // TODO handle error
+            contactFormSendButton.textContent = `❌ Error!\nPlease email or call us directly`;
             console.log(error);
+            return;
         })
         .finally(
             () => {
