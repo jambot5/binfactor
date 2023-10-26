@@ -8,6 +8,9 @@
     <title>Bin Factor - Wheelie Bin Cleaning Manchester</title>
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" />
     <!-- aos -->
@@ -30,13 +33,8 @@
                     <!-- Nav Title -->
                     Wheelie Bin Cleaning Manchester
                 </a>
-                <!-- Hamburger Menu (Mobile) -->
-                <button hidden
-                    class="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
-                    type="button" onclick="toggleNavbar('example-collapse-navbar')">
-                    <!-- Icon -->
-                    <i hidden class="text-white fas fa-bars"></i>
-                </button>
+                <!-- Hamburger Menu (Mobile) removed -->
+
             </div>
             <!-- Nav Right Side  removed -->
 
@@ -82,6 +80,18 @@
 
         <!-- Services Section -->
         <section class="pb-20 bg-gray-300 -mt-24">
+            <div class="alert alert-warning" role="alert">
+                <p><b>Already a client?</b></p>
+                <p>
+                    <a href="#payments">
+
+                        <button class="btn btn-primary" type="submit">
+                            Pay your bill
+                        </button>
+                    </a>
+                    or <a href="#payments">contact us</a>
+                </p>
+            </div>
             <!-- 3 Card Section -->
             <div class="container mx-auto px-4">
                 <div class="flex flex-wrap">
@@ -456,7 +466,7 @@
                 <!-- Flex Row Container -->
                 <div class="flex flex-wrap mt-12 justify-center" id="payments">
                     <!-- Item -->
-                    <div class="w-full lg:w-3/12 px-4 text-center" data-aos="fade-in" data-aos-delay="600">
+                    <div class="w-full lg:w-3/12 px-4 text-center" data-aos="fade-in" data-aos-delay="300">
                         <div
                             class="text-gray-900 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center">
                             <!-- Icon -->
@@ -472,22 +482,6 @@
                         </p>
                     </div>
                     <!-- Item -->
-                    <div class="w-full lg:w-3/12 px-4 text-center" data-aos="fade-in" data-aos-delay="400">
-                        <div
-                            class="text-gray-900 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center">
-                            <!-- Icon -->
-                            <i class="fas fa-poll text-xl"></i>
-                        </div>
-                        <!-- Text Box -->
-                        <h5 class="text-xl mt-5 font-semibold text-white">
-                            Cheques via Post
-                        </h5>
-                        <p class="mt-2 mb-4 text-gray-500">
-                            Payable to: E. CRESCENTINI<br /> 13 Victoria Crescent, Eccles<br /> M30 9AN<br /> Please use
-                            your address as payment reference
-                        </p>
-                    </div>
-                    <!-- Item -->
                     <div class="w-full lg:w-3/12 px-4 text-center" data-aos="fade-in">
                         <div
                             class="text-gray-900 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center">
@@ -495,38 +489,20 @@
                             <i class="fab fa-paypal text-xl"></i>
                         </div>
                         <!-- Text Box -->
-                        <h5 class="text-xl mt-5 font-semibold text-white">PayPal or Cards</h5>
+                        <h5 class="text-xl mt-5 font-semibold text-white">Debit or Credit Card</h5>
                         <p class="mt-2 mb-4 text-gray-500">
-                            <a href="https://paypal.me/binfactor?country.x=GB&locale.x=en_GB" data-rel="external">
-                                <button class="payment-button">PayPal Me</button>
-                            </a><br />
+                            Click or Tap Paynow.<br />
+                            Enter total bill amount.<br />
+                            Choose Card or Paypal<br />
+                            Address of bins cleaned.<br />
 
-                            <button class="payment-button" id="paypal-options-btn"
-                                onclick="toggleDiv('card-options-id', 'paypal-options-btn')">
-                                Pay with Paypal
-                            </button>
-
-                        <div id="card-options-id" style="display: none;">
-                            <p>Click Paynow and enter the amount</p>
-                            <p>of your bin cleaning bill.</p>
-                            <p>Make sure the delivery address is where we cleaned your bins.</p>
-                            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                                <input type="hidden" name="cmd" value="_s-xclick" />
-                                <input type="hidden" name="hosted_button_id" value="VMSF74LTBAP7U" />
-                                <input type="hidden" name="currency_code" value="GBP" />
-                                <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_paynowCC_LG.gif"
-                                    border="0" name="submit" title="PayPal - The safer, easier way to pay online!"
-                                    alt="Buy Now" />
-                            </form>
-                        </div>
-
-                        <br />
-                        <button class="payment-button" id="paypal-qr-code-button"
-                            onclick="toggleImage('paypal-qr-code','paypal-qr-code-button')">
-                            Show PayPal QR
-                        </button>
-                        <img id="paypal-qr-code" src="images/qrcode-binfactor.png" style="display: none;">
-
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                            <input type="hidden" name="cmd" value="_s-xclick" />
+                            <input type="hidden" name="hosted_button_id" value="VMSF74LTBAP7U" />
+                            <input type="hidden" name="currency_code" value="GBP" />
+                            <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_paynowCC_LG.gif"
+                                border="0" name="submit" title="Secure Payment" alt="Buy Now" />
+                        </form>
                         </p>
                     </div>
                     <!-- Item -->
@@ -677,6 +653,5 @@
 </script>
 <!-- Custom scripts -->
 <script src="scripts/toggleimage.js"></script>
-<script src="scripts/togglediv.js"></script>
 
 </html>
